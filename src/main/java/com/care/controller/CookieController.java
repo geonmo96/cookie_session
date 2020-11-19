@@ -37,6 +37,14 @@ public class CookieController {
 		return "cookie";
 		*/
 		
+		// 이런 방식도 있음
+		Cookie[] cookies = request.getCookies(); // jcookie?라는 기본쿠키가 있기때문에 NullPointException 발생 x
+		if(cookies != null) {
+			for(Cookie c : cookies) {
+				System.out.println(c.getName() + " : " + c.getValue());
+			}
+		}
+		
 		if(cook != null) {
 			model.addAttribute("cook", cook.getValue());
 		}
@@ -51,7 +59,9 @@ public class CookieController {
 		// 이 메서드를 void형으로 바꾸면 안됨 => 결국내가한거랑 똑같은데용;;
 		Cookie cook = new Cookie("myCookie", "나의쿠키");
 		cook.setMaxAge(10); // 하루 계산해서 넣으면 됨, 지금은 10초
-		cook.setPath("/");
+		cook.setPath("/"); 
+		// 서로 다른 경로에 있을 때 쿠키의 값이 전달이 안됨.
+		// 위의 setPath(value)는 value에 해당하는 경로부터 쿠키를 설정하는 기능이다. 
 		response.addCookie(cook);
 		return "close";
 	}

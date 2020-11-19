@@ -30,6 +30,8 @@ encoding 설정도 web.xml에 추가한다
 // 에러를 방지하기 위해서 required=false => 해당하는 값이 없다면 null이 반환됨
 // 콘솔에 null이 찍히는걸 볼 수 있음
 
+3. session값을 받아올 때
+
 
 
 
