@@ -22,3 +22,28 @@ encoding 설정도 web.xml에 추가한다
    <filter-name>encodingFilter</filter-name>
    <url-pattern>/*</url-pattern>                 
 </filter-mapping> 
+
+2. 쿠키 받아오기
+// @CookieValue(value="cookieName", required=fase) Cookie cook
+// required가 없으면 에러가 발생함
+// maxAge를 10초로 설정했기 때문에 10초안에 받아야함, 즉 10초가 지난다면 쿠키가 없기 때문에 에러가 발생함
+// 에러를 방지하기 위해서 required=false => 해당하는 값이 없다면 null이 반환됨
+// 콘솔에 null이 찍히는걸 볼 수 있음
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
